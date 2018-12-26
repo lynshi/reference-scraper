@@ -27,8 +27,8 @@ class BasketballReferenceScraper:
             self.scrape_player_index(letter)
 
     def query(self, url, timeout=5):
-        if time.clock() - self.last_break_time >= random.gauss(15, 1):
-            time.sleep(round(random.gauss(5, 1)))
+        if time.clock() - self.last_break_time >= random.gauss(900, 15):
+            time.sleep(round(random.gauss(300, 5)))
             self.last_break_time = time.clock()
         else:
             time.sleep(round(random.gauss(self.mu, self.sigma), 3))
