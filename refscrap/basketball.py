@@ -43,8 +43,6 @@ class BasketballReferenceScraper:
         return response
 
     def scrape_player_index(self, first_letter):
-        if first_letter != 'a' and first_letter != 'x':
-            return
         url = self._player_index_url + '/' + first_letter
 
         page_response = self.query(url, timeout=5)
