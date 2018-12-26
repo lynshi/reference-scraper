@@ -12,6 +12,7 @@ class BasketballReferenceScraper:
         random.seed()
         self.mu = mu
         self.sigma = sigma
+        self.last_break_time = time.clock()
 
     @property
     def _url(self):
@@ -26,6 +27,9 @@ class BasketballReferenceScraper:
             self.scrape_player_index(letter)
 
     def query(self, url, timeout=5):
+        if time.clock() - self.last_break_time >= random.gauss(15, 1):
+            time.sleep(round(random.gauss(5, 1)))
+            self.last_break_time = time.clock()
         time.sleep(round(random.gauss(self.mu, self.sigma), 3))
         response = requests.get(url, timeout=timeout)
         return response
