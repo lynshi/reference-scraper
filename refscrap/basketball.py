@@ -13,6 +13,7 @@ class BasketballReferenceScraper:
         self.mu = mu
         self.sigma = sigma
         self.last_break_time = time.clock()
+        self.consecutive_fails = 0
 
     @property
     def _url(self):
@@ -33,6 +34,12 @@ class BasketballReferenceScraper:
         else:
             time.sleep(round(random.gauss(self.mu, self.sigma), 3))
         response = requests.get(url, timeout=timeout)
+        if response.status_code != 200:
+            self.consecutive_fails += 1
+            if self.consecutive_fails >= 10:
+                raise RuntimeError('10 consecutive request errors')
+        else:
+            self.consecutive_fails = 0
         return response
 
     def scrape_player_index(self, first_letter):
