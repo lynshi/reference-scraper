@@ -38,7 +38,7 @@ class BasketballReferenceScraper:
             try:
                 response = requests.get(url, timeout=timeout)
                 break
-            except urllib3.exceptions.ConnectTimeoutError as e:
+            except requests.exceptions.ReadTimeout as e:
                 time.sleep(random.randint(1,5))
                 if i == 9:
                     raise RuntimeError('too many timeouts')
