@@ -7,7 +7,7 @@ import time
 
 
 class BasketballReferenceScraper:
-    def __init__(self, mu=20, sigma=1):
+    def __init__(self, mu=10, sigma=1):
         self.data_out_dir = os.getcwd() + '/data/basketball/'
         random.seed()
         self.mu = mu
@@ -29,7 +29,7 @@ class BasketballReferenceScraper:
 
     def query(self, url, timeout=5):
         if time.clock() - self.last_break_time >= random.gauss(900, 15):
-            time.sleep(round(random.gauss(600, 15)))
+            time.sleep(round(random.gauss(300, 15)))
             self.last_break_time = time.clock()
         else:
             time.sleep(round(random.gauss(self.mu, self.sigma), 3))
@@ -38,9 +38,8 @@ class BasketballReferenceScraper:
                 response = requests.get(url, timeout=timeout)
                 break
             except urllib3.exceptions.ConnectTimeoutError as e:
-                time.sleep(random.randint(1,5)
-                count += 1
-                if count > 10:
+                time.sleep(random.randint(1,5))
+                if i == 9:
                     raise RuntimeError('too many timeouts')
         if response.status_code != 200:
             self.consecutive_fails += 1
