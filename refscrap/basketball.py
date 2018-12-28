@@ -4,6 +4,7 @@ import os
 import random
 import requests
 import time
+import urllib3
 
 
 class BasketballReferenceScraper:
