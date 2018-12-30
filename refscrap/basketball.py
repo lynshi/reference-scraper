@@ -73,7 +73,6 @@ class BasketballReferenceScraper:
 
             suffix = row.findChildren('a')[0]['href']
             self.scrape_player(self._url + suffix)
-            exit()
 
     def generate_player_dict_entry(self, url):
         if os.path.isfile('player_dict.json') is True:
