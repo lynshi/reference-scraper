@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import csv
+import json
 import os
 import random
 import requests
@@ -8,6 +9,12 @@ import urllib3
 
 
 class BasketballReferenceScraper:
+    POS_MAP = {
+        'Point Guard': 'PG',
+        'Shooting Guard': 'SG',
+
+    }
+
     def __init__(self, mu=10, sigma=1):
         self.data_out_dir = os.getcwd() + '/data/basketball/'
         random.seed()
@@ -15,6 +22,7 @@ class BasketballReferenceScraper:
         self.sigma = sigma
         self.last_break_time = time.clock()
         self.consecutive_fails = 0
+        self.player_dict = {}
 
     @property
     def _url(self):
@@ -27,6 +35,9 @@ class BasketballReferenceScraper:
     def scrape(self):
         for letter in 'abcdefghijklmnopqrstuvwxyz':
             self.scrape_player_index(letter)
+
+        with open('player_dict.json', 'w') as outfile:
+            outfile.write(json.dumps(self.player_dict, indent=4))
 
     def query(self, url, timeout=5):
         if time.clock() - self.last_break_time >= random.gauss(900, 15):
@@ -70,7 +81,38 @@ class BasketballReferenceScraper:
             suffix = row.findChildren('a')[0]['href']
             self.scrape_player(self._url + suffix)
 
+    def generate_player_dict_entry(self, url):
+        player_id = url.split('/')[-1].split('.')[0]
+        self.player_dict[player_id] = {}
+        resp = self.query(url, timeout=5)
+        if resp.status_code != 200:
+            return
+        
+        content = BeautifulSoup(resp.content, 'html.parser')
+        name = content.find('h1', {'itemprop': 'name'}).string
+
+        # do not get position because multiple positions may be listed and 
+        # consistency with DFS rosters is not guaranteed
+
+        ps = content.findChildren('p')
+        idx = None
+        for i, p in enumerate(ps):
+            if p.getText().find('Team:') != -1:
+                idx = i
+                break        
+        if idx is None:
+            continue
+
+        team_link = ps[idx].find('a')['href']
+        team = team_link.split('/')[2]
+        self.player_dict[player_id] = {
+            'Team': team,
+            'Name': name
+        }
+
     def scrape_player(self, url):
+        self.generate_player_dict_entry(url)
+        return
         base_url = url[:-5]
         self.download_game_logs(base_url, 2014, 2019)
         self.download_advanced_game_logs(base_url, 2014, 2019)
