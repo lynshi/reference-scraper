@@ -5,14 +5,11 @@ import os
 import random
 import requests
 import time
-import urllib3
 
 
 class BasketballReferenceScraper:
-    POS_MAP = {
-        'Point Guard': 'PG',
-        'Shooting Guard': 'SG',
-
+    DATA_STAT_TO_IGNORE = {
+        'game_location', 'game_result'
     }
 
     def __init__(self, mu=10, sigma=1):
@@ -22,7 +19,6 @@ class BasketballReferenceScraper:
         self.sigma = sigma
         self.last_break_time = time.clock()
         self.consecutive_fails = 0
-        self.player_dict = {}
 
     @property
     def _url(self):
@@ -35,9 +31,6 @@ class BasketballReferenceScraper:
     def scrape(self):
         for letter in 'abcdefghijklmnopqrstuvwxyz':
             self.scrape_player_index(letter)
-
-        with open('player_dict.json', 'w') as outfile:
-            outfile.write(json.dumps(self.player_dict, indent=4))
 
     def query(self, url, timeout=5):
         if time.clock() - self.last_break_time >= random.gauss(900, 15):
@@ -80,16 +73,24 @@ class BasketballReferenceScraper:
 
             suffix = row.findChildren('a')[0]['href']
             self.scrape_player(self._url + suffix)
+            exit()
 
     def generate_player_dict_entry(self, url):
+        if os.path.isfile('player_dict.json') is True:
+            with open('player_dict.json') as infile:
+                player_dict = json.load(infile)
+        else:
+            player_dict = {}
+
         player_id = url.split('/')[-1].split('.')[0]
-        self.player_dict[player_id] = {}
+        player_dict[player_id] = {}
         resp = self.query(url, timeout=5)
         if resp.status_code != 200:
             return
         
         content = BeautifulSoup(resp.content, 'html.parser')
         name = content.find('h1', {'itemprop': 'name'}).string
+        player_dict[player_id]['Name'] = name
 
         # do not get position because multiple positions may be listed and 
         # consistency with DFS rosters is not guaranteed
@@ -100,22 +101,19 @@ class BasketballReferenceScraper:
             if p.getText().find('Team:') != -1:
                 idx = i
                 break        
-        if idx is None:
-            return
+        if idx is not None:
+            team_link = ps[idx].find('a')['href']
+            team = team_link.split('/')[2]
+            player_dict[player_id]['Team'] = team
 
-        team_link = ps[idx].find('a')['href']
-        team = team_link.split('/')[2]
-        self.player_dict[player_id] = {
-            'Team': team,
-            'Name': name
-        }
+        with open('player_dict.json', 'w') as outfile:
+            outfile.write(json.dumps(player_dict, indent=4))
 
     def scrape_player(self, url):
         self.generate_player_dict_entry(url)
-        return
         base_url = url[:-5]
-        self.download_game_logs(base_url, 2014, 2019)
-        self.download_advanced_game_logs(base_url, 2014, 2019)
+        self.download_game_logs(base_url, 2017, 2019)
+        self.download_advanced_game_logs(base_url, 2017, 2019)
         used_space = sum(os.path.getsize(f) for f in os.listdir(
             self.data_out_dir) if os.path.isfile(f))
 
@@ -131,9 +129,6 @@ class BasketballReferenceScraper:
         if skip_existing is True and os.path.isfile(csv_out_name) is True:
             return
 
-        data_stat_to_ignore = {
-            'ranker', 'game_location', 'game_result'
-        }
         csv_headings = []
         csv_rows = []
 
@@ -155,20 +150,23 @@ class BasketballReferenceScraper:
                 thead = div.find('thead')
                 ths = thead.findChildren('th')
                 for th in ths:
-                    if th['data-stat'] in data_stat_to_ignore:
+                    if th['data-stat'] in \
+                            BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
                         continue
                     csv_headings.append(th.string)
 
             trs = div.findChildren('tr')[1:]
             for tr in trs:
-                row_content = []
+                row_content = [len(csv_rows) % 82 + 1]
                 tds = tr.findChildren('td')
-                append = True
+                append = (len(tds) > 0)
                 for td in tds:
-                    if td['data-stat'] in data_stat_to_ignore:
+                    if td['data-stat'] in \
+                            BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
                         continue
                     elif td['data-stat'] == 'reason':
-                        append = False
+                        while len(row_content) < len(csv_headings):
+                            row_content.append(0)
                         break
 
                     row_content.append(td.string)
@@ -191,9 +189,6 @@ class BasketballReferenceScraper:
         if skip_existing is True and os.path.isfile(csv_out_name) is True:
             return
 
-        data_stat_to_ignore = {
-            'ranker', 'game_location', 'game_result'
-        }
         csv_headings = []
         csv_rows = []
 
@@ -214,20 +209,23 @@ class BasketballReferenceScraper:
                 thead = div.find('thead')
                 ths = thead.findChildren('th')
                 for th in ths:
-                    if th['data-stat'] in data_stat_to_ignore:
+                    if th['data-stat'] in \
+                            BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
                         continue
                     csv_headings.append(th.string)
 
             trs = div.findChildren('tr')[1:]
             for tr in trs:
-                row_content = []
+                row_content = [len(csv_rows) % 82 + 1]
                 tds = tr.findChildren('td')
-                append = True
+                append = (len(tds) > 0)
                 for td in tds:
-                    if td['data-stat'] in data_stat_to_ignore:
+                    if td['data-stat'] in \
+                            BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
                         continue
                     elif td['data-stat'] == 'reason':
-                        append = False
+                        while len(row_content) < len(csv_headings):
+                            row_content.append(0)
                         break
 
                     row_content.append(td.string)
