@@ -101,7 +101,7 @@ class BasketballReferenceScraper:
                 idx = i
                 break        
         if idx is None:
-            continue
+            return
 
         team_link = ps[idx].find('a')['href']
         team = team_link.split('/')[2]
