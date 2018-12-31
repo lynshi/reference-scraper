@@ -47,7 +47,9 @@ class Uploader:
                 tup = (row['Date'].split('-')[0], row['Rk'])
                 d = {}
                 for col in row:
-                    if col in {'Tm', 'Opp', 'MP', 'Date'}:
+                    if len(row[col]) == 0:
+                        d[col] = 'nan'
+                    elif col in {'Tm', 'Opp', 'MP', 'Date'}:
                         d[col] = row[col]
                     elif col.find('%') != -1 or col == 'GmSc':
                         d[col] = float(row[col])
