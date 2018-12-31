@@ -82,7 +82,7 @@ class BasketballReferenceScraper:
             player_dict = {}
 
         player_id = url.split('/')[-1].split('.')[0]
-        player_dict[player_id] = {}
+        player_dict[player_id] = {'Id': player_id}
         resp = self.query(url, timeout=5)
         if resp.status_code != 200:
             return
