@@ -35,7 +35,7 @@ class Uploader:
                 month = int(row['Date'].split('-')[1])
                 if month > 7:
                     season += 1
-                tup = (season, int(row['Rk']))
+                tup = (str(season), int(row['Rk']))
                 d = {}
                 for col in row:
                     if len(row[col]) == 0:
@@ -55,7 +55,7 @@ class Uploader:
                 month = int(row['Date'].split('-')[1])
                 if month > 7:
                     season += 1
-                tup = (season, int(row['Rk']))
+                tup = (str(season), int(row['Rk']))
                 d = {}
                 for col in row:
                     if len(row[col]) == 0:
