@@ -320,5 +320,70 @@
         "Id": "blossja01",
         "Name": "Jaron Blossomgame",
         "Team": "CLE"
+    },
+    "blueva01": {
+        "Id": "blueva01",
+        "Name": "Vander Blue"
+    },
+    "bogdabo01": {
+        "Id": "bogdabo01",
+        "Name": "Bogdan Bogdanovic",
+        "Team": "SAC"
+    },
+    "bogdabo02": {
+        "Id": "bogdabo02",
+        "Name": "Bojan Bogdanovic",
+        "Team": "IND"
+    },
+    "bogutan01": {
+        "Id": "bogutan01",
+        "Name": "Andrew Bogut"
+    },
+    "boldejo01": {
+        "Id": "boldejo01",
+        "Name": "Jonah Bolden",
+        "Team": "PHI"
+    },
+    "bolomjo01": {
+        "Id": "bolomjo01",
+        "Name": "Joel Bolomboy"
+    },
+    "bongais01": {
+        "Id": "bongais01",
+        "Name": "Isaac Bonga",
+        "Team": "LAL"
+    },
+    "bookede01": {
+        "Id": "bookede01",
+        "Name": "Devin Booker",
+        "Team": "PHO"
+    },
+    "booketr01": {
+        "Id": "booketr01",
+        "Name": "Trevor Booker"
+    },
+    "bouchch01": {
+        "Id": "bouchch01",
+        "Name": "Chris Boucher",
+        "Team": "TOR"
+    },
+    "bradlav01": {
+        "Id": "bradlav01",
+        "Name": "Avery Bradley",
+        "Team": "LAC"
+    },
+    "bradlto01": {
+        "Id": "bradlto01",
+        "Name": "Tony Bradley",
+        "Team": "UTA"
+    },
+    "breweco01": {
+        "Id": "breweco01",
+        "Name": "Corey Brewer"
+    },
+    "bridgmi01": {
+        "Id": "bridgmi01",
+        "Name": "Mikal Bridges",
+        "Team": "PHO"
     }
 }
