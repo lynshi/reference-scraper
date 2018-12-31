@@ -23,7 +23,7 @@ class Uploader:
 
         return player.key
 
-    def add_player_stats(self, csv_file_name, player_key):
+    def add_player_stats(self, csv_file_name, player_key, player_id):
         game_logs = {}
         with open(csv_file_name) as infile:
             stat_reader = DictReader(infile)
@@ -56,5 +56,21 @@ class Uploader:
                         d[col] = int(row[col])
                 game_logs[tup].update(d)
                 break
+        items = []
+        for tup in game_logs.keys():
+            season = tup[0]
+            game = tup[1]
+            stats = game_logs[tup]
+            stats['Name'] = self.player_dict[player_id]['Name']
+            key = self.client.key(season, game, parent=player_key)
+            item = datastore.Entity(key, exclude_from_indexes=(
+                'Age', 'GS', 'MP', 'FG', 'FGA', 'FG %', '3P', '3PA', '3P %',
+                'FT', 'FTA', 'FT %', 'ORB', 'DRB', 'TRB', 'AST', 'STL', 'BLK',
+                'TOV', 'PF', 'PTS', 'GmSc', '+ / -',
+                'TS%', 'eFG%', 'ORB%', 'DRB%', 'TRB%', 'AST%', 'STL%', 'BLK%',
+                'TOV%', 'USG%', 'ORtg', 'DRtg'
+            ))
+            item.update(stats)
+            items.append(item)
 
-        
+        self.client.put_multi(items)
