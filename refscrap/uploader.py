@@ -11,6 +11,8 @@ class Uploader:
         with open(player_dict_json) as infile:
             self.player_dict = json.load(infile)
 
+        self.bad_csvs = set()
+
     @staticmethod
     def get_player_id(csv_file_name):
         return csv_file_name.split('/')[-1].split('.')[0]
@@ -40,6 +42,10 @@ class Uploader:
                     else:
                         d[col] = int(row[col])
                 game_logs[tup] = d
+
+        if len(game_logs) == 0:
+            self.bad_csvs.add(csv_file_name)
+            return
 
         with open(csv_file_name.replace('.', '-advanced.')) as infile:
             stat_reader = DictReader(infile)

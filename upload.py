@@ -17,6 +17,8 @@ def upload():
         player_key = uploader.add_player('NBA', player_id)
         uploader.add_player_stats(file, player_key, player_id)
 
+    print(uploader.bad_csvs)
+
 
 if __name__ == '__main__':
     upload()
