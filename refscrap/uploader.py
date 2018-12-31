@@ -11,13 +11,14 @@ class Uploader:
         with open(player_dict_json) as infile:
             self.player_dict = json.load(infile)
 
-        self.bad_csvs = set()
-
     @staticmethod
     def get_player_id(csv_file_name):
         return csv_file_name.split('/')[-1].split('.')[0]
 
     def add_player(self, league, player_id):
+        if player_id not in self.player_dict:
+            return None
+
         key = self.client.key(league, player_id)
         player = datastore.Entity(key)
         player.update(self.player_dict[player_id])
@@ -43,10 +44,6 @@ class Uploader:
                         d[col] = int(row[col])
                 game_logs[tup] = d
 
-        if len(game_logs) == 0:
-            self.bad_csvs.add(csv_file_name)
-            return
-
         with open(csv_file_name.replace('.', '-advanced.')) as infile:
             stat_reader = DictReader(infile)
             for row in stat_reader:
@@ -61,6 +58,8 @@ class Uploader:
                         d[col] = float(row[col])
                     else:
                         d[col] = int(row[col])
+                print(game_logs)
+                print(csv_file_name)
                 game_logs[tup].update(d)
 
         items = []

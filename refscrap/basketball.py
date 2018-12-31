@@ -46,7 +46,7 @@ class BasketballReferenceScraper:
                 time.sleep(random.randint(1,5))
                 if i == 9:
                     raise RuntimeError('too many timeouts')
-        if response.status_code != 200:
+        if response.status_code != 200 and response.status_code != 404:
             self.consecutive_fails += 1
             if self.consecutive_fails >= 10:
                 raise RuntimeError('10 consecutive request errors')
