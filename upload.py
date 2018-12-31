@@ -16,7 +16,6 @@ def upload():
         player_id = Uploader.get_player_id(file)
         player_key = uploader.add_player('NBA', player_id)
         uploader.add_player_stats(file, player_key, player_id)
-        break
 
 
 if __name__ == '__main__':

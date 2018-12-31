@@ -40,7 +40,6 @@ class Uploader:
                     else:
                         d[col] = int(row[col])
                 game_logs[tup] = d
-                break
 
         with open(csv_file_name.replace('.', '-advanced.')) as infile:
             stat_reader = DictReader(infile)
@@ -55,7 +54,7 @@ class Uploader:
                     else:
                         d[col] = int(row[col])
                 game_logs[tup].update(d)
-                break
+
         items = []
         for tup in game_logs.keys():
             season = tup[0]
