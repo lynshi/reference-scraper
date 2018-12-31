@@ -31,7 +31,11 @@ class Uploader:
         with open(csv_file_name) as infile:
             stat_reader = DictReader(infile)
             for row in stat_reader:
-                tup = (row['Date'].split('-')[0], row['Rk'])
+                season = int(row['Date'].split('-')[0])
+                month = int(row['Date'].split('-')[1])
+                if month > 7:
+                    season += 1
+                tup = (season, int(row['Rk']))
                 d = {}
                 for col in row:
                     if len(row[col]) == 0:
@@ -47,7 +51,11 @@ class Uploader:
         with open(csv_file_name.replace('.', '-advanced.')) as infile:
             stat_reader = DictReader(infile)
             for row in stat_reader:
-                tup = (row['Date'].split('-')[0], row['Rk'])
+                season = int(row['Date'].split('-')[0])
+                month = int(row['Date'].split('-')[1])
+                if month > 7:
+                    season += 1
+                tup = (season, int(row['Rk']))
                 d = {}
                 for col in row:
                     if len(row[col]) == 0:
@@ -58,8 +66,6 @@ class Uploader:
                         d[col] = float(row[col])
                     else:
                         d[col] = int(row[col])
-                print(game_logs)
-                print(csv_file_name)
                 game_logs[tup].update(d)
 
         items = []
