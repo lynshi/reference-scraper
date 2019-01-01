@@ -8,10 +8,9 @@ from refscrap.uploader import Uploader
 def create_aggregated_data_frame(directory):
     df = None
     for f in os.listdir(directory):
-        if f.find('.csv') == -1 or f.find('advanced') == -1:
+        if f.find('.csv') == -1 or f.find('advanced') != -1:
             continue
         file = directory + f
-        print(file)
         if df is None:
             df = pd.read_csv(file)
         else:
@@ -38,17 +37,28 @@ def get_game_logs(df, uploader: Uploader):
                  'BOS', 'MIL', 'IND', 'MIN', 'ATL', 'HOU', 'LAC', 'UTA', 'MEM',
                  'NYK', 'BRK', 'DET', 'CLE', 'SAC', 'MIA', 'ORL', 'CHO', 'CHI',
                  'PHI', 'WAS']:
-        get_game_logs_for_team(df, team, uploader)
+        team_key = uploader.add_team('NBA', team)
+        get_game_logs_for_team(df, team, uploader, team_key)
 
 
-def get_game_logs_for_team(df, team, uploader: Uploader):
+def get_game_logs_for_team(df: pd.DataFrame, team, uploader: Uploader, team_key):
     seasons = [2017, 2018, 2019]
-    games = [i for i in range(1,83)]
+    games = [i for i in range(1, 83)]
 
+    logs = {}
     for season in seasons:
         for game in games:
             game_df = df[(df['Season'] == season) &
                          (df['Rk'] == game) &
                          (df['Tm'] == team)]
-            print(game_df)
-            exit()
+            if len(game_df) == 0:
+                continue
+            stats = ['3P', '3PA', 'AST', 'BLK', 'DRB', 'FG', 'FGA', 'FT', 'FTA',
+                     'ORB', 'PF', 'PTS', 'STL', 'TOV', 'TRB']
+            log = {}
+            for stat in stats:
+                log[stat] = int(game_df[stat].sum())
+            log['Opp'] = game_df['Opp'].unique()[0]
+            logs[(season, game)] = log
+
+    uploader.add_team_game_logs(team, team_key, logs)
