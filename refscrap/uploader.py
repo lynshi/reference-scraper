@@ -111,8 +111,12 @@ class Uploader:
                         d[col] = float(row[col])
                     else:
                         d[col] = int(row[col])
-                game_logs[tup].update(d)
-
+                try:
+                    game_logs[tup].update(d)
+                except KeyError:
+                    raise RuntimeError(str(tup) + ' missing in ' +
+                                       csv_file_name)
+        return
         items = []
         for tup in game_logs.keys():
             season = tup[0]

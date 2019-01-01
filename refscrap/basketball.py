@@ -49,7 +49,7 @@ class BasketballReferenceScraper:
                     raise RuntimeError('10 consecutive request errors')
             else:
                 break
-                
+
             time.sleep(random.randint(1, 5))
         return response
 
