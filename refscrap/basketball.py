@@ -114,7 +114,8 @@ class BasketballReferenceScraper:
     def scrape_player(self, url):
         self.generate_player_dict_entry(url)
         base_url = url[:-5]
-        self.download_game_logs(base_url, 2017, 2019)
+        if self.download_game_logs(base_url, 2017, 2019) is False:
+            return
         self.download_advanced_game_logs(base_url, 2017, 2019)
         used_space = sum(os.path.getsize(f) for f in os.listdir(
             self.data_out_dir) if os.path.isfile(f))
@@ -149,19 +150,13 @@ class BasketballReferenceScraper:
                 continue
 
             if len(csv_headings) == 0:
-                for i in range(10):
-                    thead = div.find('thead')
-                    ths = thead.findChildren('th')
-                    for th in ths:
-                        if th['data-stat'] in \
-                                BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
-                            continue
-                        csv_headings.append(th.string)
-                    if len(csv_headings) == 21:
-                        break
-                if len(csv_headings) != 21:
-                    raise RuntimeError('Cannot get 21 columns for ' +
-                                       base_url + '/gamelog-advanced/' + year)
+                thead = div.find('thead')
+                ths = thead.findChildren('th')
+                for th in ths:
+                    if th['data-stat'] in \
+                            BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
+                        continue
+                    csv_headings.append(th.string)
 
             trs = div.findChildren('tr')[1:]
             for tr in trs:
@@ -195,7 +190,7 @@ class BasketballReferenceScraper:
         csv_out_name = \
             os.path.join(self.data_out_dir, base_url.split('/')[-1] + '.csv')
         if skip_existing is True and os.path.isfile(csv_out_name) is True:
-            return
+            return False
 
         csv_headings = []
         csv_rows = []
@@ -214,19 +209,17 @@ class BasketballReferenceScraper:
                 continue
 
             if len(csv_headings) == 0:
-                for i in range(10):
-                    thead = div.find('thead')
-                    ths = thead.findChildren('th')
-                    for th in ths:
-                        if th['data-stat'] in \
-                                BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
-                            continue
-                        csv_headings.append(th.string)
-                    if len(csv_headings) == 28:
-                        break
-                if len(csv_headings) != 28:
-                    raise RuntimeError('Cannot get 28 columns for ' +
-                                       base_url + '/gamelog/' + year)
+                thead = div.find('thead')
+                ths = thead.findChildren('th')
+                for th in ths:
+                    if th['data-stat'] in \
+                            BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
+                        continue
+                    csv_headings.append(th.string)
+
+            if len(csv_headings) != 28:
+                csv_headings = []
+                continue
 
             trs = div.findChildren('tr')[1:]
             for tr in trs:
@@ -250,7 +243,12 @@ class BasketballReferenceScraper:
                 if append is True:
                     csv_rows.append(row_content)
 
+        if len(csv_headings) == 0:
+            return False
+
         with open(csv_out_name, 'w') as outfile:
             csv_writer = csv.writer(outfile)
             csv_writer.writerow(csv_headings)
             csv_writer.writerows(csv_rows)
+
+        return True
