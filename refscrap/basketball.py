@@ -158,6 +158,10 @@ class BasketballReferenceScraper:
                         continue
                     csv_headings.append(th.string)
 
+            if len(csv_headings) != 21:
+                csv_headings = []
+                continue
+
             trs = div.findChildren('tr')[1:]
             for tr in trs:
                 row_content = [len(csv_rows) % 82 + 1]
@@ -180,6 +184,9 @@ class BasketballReferenceScraper:
                 if append is True:
                     csv_rows.append(row_content)
 
+        if len(csv_headings) == 0:
+            return
+
         with open(csv_out_name, 'w') as outfile:
             csv_writer = csv.writer(outfile)
             csv_writer.writerow(csv_headings)
@@ -190,7 +197,7 @@ class BasketballReferenceScraper:
         csv_out_name = \
             os.path.join(self.data_out_dir, base_url.split('/')[-1] + '.csv')
         if skip_existing is True and os.path.isfile(csv_out_name) is True:
-            return False
+            return True
 
         csv_headings = []
         csv_rows = []

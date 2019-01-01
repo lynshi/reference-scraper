@@ -13,10 +13,6 @@
         "Name": "Jaylen Adams",
         "Team": "ATL"
     },
-    "adamsjo01": {
-        "Id": "adamsjo01",
-        "Name": "Jordan Adams"
-    },
     "adamsst01": {
         "Id": "adamsst01",
         "Name": "Steven Adams",
@@ -47,10 +43,6 @@
         "Id": "aldrila01",
         "Name": "LaMarcus Aldridge",
         "Team": "SAS"
-    },
-    "alexacl01": {
-        "Id": "alexacl01",
-        "Name": "Cliff Alexander"
     },
     "alkinra01": {
         "Id": "alkinra01",
@@ -582,10 +574,6 @@
         "Name": "Wilson Chandler",
         "Team": "PHI"
     },
-    "childjo01": {
-        "Id": "childjo01",
-        "Name": "Josh Childress"
-    },
     "chrisma01": {
         "Id": "chrisma01",
         "Name": "Marquese Chriss",
@@ -706,10 +694,6 @@
         "Id": "cunnida01",
         "Name": "Dante Cunningham",
         "Team": "SAS"
-    },
-    "cunnija01": {
-        "Id": "cunnija01",
-        "Name": "Jared Cunningham"
     },
     "curryse01": {
         "Id": "curryse01",
