@@ -3234,5 +3234,31 @@
         "Id": "zubaciv01",
         "Name": "Ivica Zubac",
         "Team": "LAL"
+    },
+    "adamsjo01": {
+        "Id": "adamsjo01",
+        "Name": "Jordan Adams"
+    },
+    "alexacl01": {
+        "Id": "alexacl01",
+        "Name": "Cliff Alexander"
+    },
+    "caupatr01": {
+        "Id": "caupatr01",
+        "Name": "Troy Caupain",
+        "Team": "ORL"
+    },
+    "childjo01": {
+        "Id": "childjo01",
+        "Name": "Josh Childress"
+    },
+    "cunnija01": {
+        "Id": "cunnija01",
+        "Name": "Jared Cunningham"
+    },
+    "jeffeam01": {
+        "Id": "jeffeam01",
+        "Name": "Amile Jefferson",
+        "Team": "ORL"
     }
 }
