@@ -1363,5 +1363,854 @@
         "Id": "houseda01",
         "Name": "Danuel House",
         "Team": "HOU"
+    },
+    "howardw01": {
+        "Id": "howardw01",
+        "Name": "Dwight Howard",
+        "Team": "WAS"
+    },
+    "huertma01": {
+        "Id": "huertma01",
+        "Name": "Marcelo Huertas"
+    },
+    "huertke01": {
+        "Id": "huertke01",
+        "Name": "Kevin Huerter",
+        "Team": "ATL"
+    },
+    "huestjo01": {
+        "Id": "huestjo01",
+        "Name": "Josh Huestis"
+    },
+    "hunterj01": {
+        "Id": "hunterj01",
+        "Name": "R.J. Hunter"
+    },
+    "huntevi01": {
+        "Id": "huntevi01",
+        "Name": "Vince Hunter"
+    },
+    "hutchch01": {
+        "Id": "hutchch01",
+        "Name": "Chandler Hutchison",
+        "Team": "CHI"
+    },
+    "ibakase01": {
+        "Id": "ibakase01",
+        "Name": "Serge Ibaka",
+        "Team": "TOR"
+    },
+    "iguodan01": {
+        "Id": "iguodan01",
+        "Name": "Andre Iguodala",
+        "Team": "GSW"
+    },
+    "ilyaser01": {
+        "Id": "ilyaser01",
+        "Name": "Ersan Ilyasova",
+        "Team": "MIL"
+    },
+    "inglejo01": {
+        "Id": "inglejo01",
+        "Name": "Joe Ingles",
+        "Team": "UTA"
+    },
+    "ingraan01": {
+        "Id": "ingraan01",
+        "Name": "Andre Ingram"
+    },
+    "ingrabr01": {
+        "Id": "ingrabr01",
+        "Name": "Brandon Ingram",
+        "Team": "LAL"
+    },
+    "irvinky01": {
+        "Id": "irvinky01",
+        "Name": "Kyrie Irving",
+        "Team": "BOS"
+    },
+    "isaacjo01": {
+        "Id": "isaacjo01",
+        "Name": "Jonathan Isaac",
+        "Team": "ORL"
+    },
+    "iwundwe01": {
+        "Id": "iwundwe01",
+        "Name": "Wesley Iwundu",
+        "Team": "ORL"
+    },
+    "jackja01": {
+        "Id": "jackja01",
+        "Name": "Jarrett Jack"
+    },
+    "jacksaa01": {
+        "Id": "jacksaa01",
+        "Name": "Aaron Jackson"
+    },
+    "jacksde01": {
+        "Id": "jacksde01",
+        "Name": "Demetrius Jackson",
+        "Team": "PHI"
+    },
+    "jacksfr01": {
+        "Id": "jacksfr01",
+        "Name": "Frank Jackson",
+        "Team": "NOP"
+    },
+    "jacksja02": {
+        "Id": "jacksja02",
+        "Name": "Jaren Jackson Jr.",
+        "Team": "MEM"
+    },
+    "jacksjo02": {
+        "Id": "jacksjo02",
+        "Name": "Josh Jackson",
+        "Team": "PHO"
+    },
+    "jacksju01": {
+        "Id": "jacksju01",
+        "Name": "Justin Jackson",
+        "Team": "SAC"
+    },
+    "jackspi01": {
+        "Id": "jackspi01",
+        "Name": "Pierre Jackson"
+    },
+    "jacksre01": {
+        "Id": "jacksre01",
+        "Name": "Reggie Jackson",
+        "Team": "DET"
+    },
+    "jamesle01": {
+        "Id": "jamesle01",
+        "Name": "LeBron James",
+        "Team": "LAL"
+    },
+    "jamesmi02": {
+        "Id": "jamesmi02",
+        "Name": "Mike James"
+    },
+    "jeffeal01": {
+        "Id": "jeffeal01",
+        "Name": "Al Jefferson"
+    },
+    "jenkijo01": {
+        "Id": "jenkijo01",
+        "Name": "John Jenkins"
+    },
+    "jennibr01": {
+        "Id": "jennibr01",
+        "Name": "Brandon Jennings"
+    },
+    "jerebjo01": {
+        "Id": "jerebjo01",
+        "Name": "Jonas Jerebko",
+        "Team": "GSW"
+    },
+    "johnsal02": {
+        "Id": "johnsal02",
+        "Name": "Alize Johnson",
+        "Team": "IND"
+    },
+    "johnsam01": {
+        "Id": "johnsam01",
+        "Name": "Amir Johnson",
+        "Team": "PHI"
+    },
+    "johnsbr02": {
+        "Id": "johnsbr02",
+        "Name": "Brice Johnson"
+    },
+    "johnsda04": {
+        "Id": "johnsda04",
+        "Name": "Dakari Johnson"
+    },
+    "johnsja01": {
+        "Id": "johnsja01",
+        "Name": "James Johnson",
+        "Team": "MIA"
+    },
+    "johnsjo02": {
+        "Id": "johnsjo02",
+        "Name": "Joe Johnson"
+    },
+    "johnsom01": {
+        "Id": "johnsom01",
+        "Name": "Omari Johnson"
+    },
+    "johnsst04": {
+        "Id": "johnsst04",
+        "Name": "Stanley Johnson",
+        "Team": "DET"
+    },
+    "johnsty01": {
+        "Id": "johnsty01",
+        "Name": "Tyler Johnson",
+        "Team": "MIA"
+    },
+    "johnswe01": {
+        "Id": "johnswe01",
+        "Name": "Wesley Johnson",
+        "Team": "NOP"
+    },
+    "jokicni01": {
+        "Id": "jokicni01",
+        "Name": "Nikola Jokic",
+        "Team": "DEN"
+    },
+    "jonesda03": {
+        "Id": "jonesda03",
+        "Name": "Damian Jones",
+        "Team": "GSW"
+    },
+    "jonesde01": {
+        "Id": "jonesde01",
+        "Name": "DeQuan Jones"
+    },
+    "jonesde02": {
+        "Id": "jonesde02",
+        "Name": "Derrick Jones Jr.",
+        "Team": "MIA"
+    },
+    "jonesja04": {
+        "Id": "jonesja04",
+        "Name": "Jalen Jones",
+        "Team": "CLE"
+    },
+    "jonespe01": {
+        "Id": "jonespe01",
+        "Name": "Perry Jones"
+    },
+    "joneste01": {
+        "Id": "joneste01",
+        "Name": "Terrence Jones"
+    },
+    "jonesty01": {
+        "Id": "jonesty01",
+        "Name": "Tyus Jones",
+        "Team": "MIN"
+    },
+    "jordade01": {
+        "Id": "jordade01",
+        "Name": "DeAndre Jordan",
+        "Team": "DAL"
+    },
+    "josepco01": {
+        "Id": "josepco01",
+        "Name": "Cory Joseph",
+        "Team": "IND"
+    },
+    "kaminfr01": {
+        "Id": "kaminfr01",
+        "Name": "Frank Kaminsky",
+        "Team": "CHO"
+    },
+    "kanteen01": {
+        "Id": "kanteen01",
+        "Name": "Enes Kanter",
+        "Team": "NYK"
+    },
+    "kellyry01": {
+        "Id": "kellyry01",
+        "Name": "Ryan Kelly"
+    },
+    "kennalu01": {
+        "Id": "kennalu01",
+        "Name": "Luke Kennard",
+        "Team": "DET"
+    },
+    "kiddgmi01": {
+        "Id": "kiddgmi01",
+        "Name": "Michael Kidd-Gilchrist",
+        "Team": "CHO"
+    },
+    "kilpase01": {
+        "Id": "kilpase01",
+        "Name": "Sean Kilpatrick"
+    },
+    "kingge03": {
+        "Id": "kingge03",
+        "Name": "George King",
+        "Team": "PHO"
+    },
+    "klebima01": {
+        "Id": "klebima01",
+        "Name": "Maxi Kleber",
+        "Team": "DAL"
+    },
+    "knighbr03": {
+        "Id": "knighbr03",
+        "Name": "Brandon Knight",
+        "Team": "HOU"
+    },
+    "knoxke01": {
+        "Id": "knoxke01",
+        "Name": "Kevin Knox",
+        "Team": "NYK"
+    },
+    "korkmfu01": {
+        "Id": "korkmfu01",
+        "Name": "Furkan Korkmaz",
+        "Team": "PHI"
+    },
+    "kornelu01": {
+        "Id": "kornelu01",
+        "Name": "Luke Kornet",
+        "Team": "NYK"
+    },
+    "korveky01": {
+        "Id": "korveky01",
+        "Name": "Kyle Korver",
+        "Team": "UTA"
+    },
+    "koufoko01": {
+        "Id": "koufoko01",
+        "Name": "Kosta Koufos",
+        "Team": "SAC"
+    },
+    "kurucro01": {
+        "Id": "kurucro01",
+        "Name": "Rodions Kurucs",
+        "Team": "BRK"
+    },
+    "kuzmaky01": {
+        "Id": "kuzmaky01",
+        "Name": "Kyle Kuzma",
+        "Team": "LAL"
+    },
+    "kuzmimi01": {
+        "Id": "kuzmimi01",
+        "Name": "Mindaugas Kuzminskas"
+    },
+    "labissk01": {
+        "Id": "labissk01",
+        "Name": "Skal Labissiere",
+        "Team": "SAC"
+    },
+    "lambje01": {
+        "Id": "lambje01",
+        "Name": "Jeremy Lamb",
+        "Team": "CHO"
+    },
+    "laproni01": {
+        "Id": "laproni01",
+        "Name": "Nicolas Laprovittola"
+    },
+    "larkish01": {
+        "Id": "larkish01",
+        "Name": "Shane Larkin"
+    },
+    "lauvejo01": {
+        "Id": "lauvejo01",
+        "Name": "Joffrey Lauvergne"
+    },
+    "lavinza01": {
+        "Id": "lavinza01",
+        "Name": "Zach LaVine",
+        "Team": "CHI"
+    },
+    "lawsoty01": {
+        "Id": "lawsoty01",
+        "Name": "Ty Lawson"
+    },
+    "laymaja01": {
+        "Id": "laymaja01",
+        "Name": "Jake Layman",
+        "Team": "POR"
+    },
+    "leaftj01": {
+        "Id": "leaftj01",
+        "Name": "T.J. Leaf",
+        "Team": "IND"
+    },
+    "leeco01": {
+        "Id": "leeco01",
+        "Name": "Courtney Lee",
+        "Team": "NYK"
+    },
+    "leeda03": {
+        "Id": "leeda03",
+        "Name": "Damion Lee",
+        "Team": "GSW"
+    },
+    "lemonwa01": {
+        "Id": "lemonwa01",
+        "Name": "Walt Lemon, Jr."
+    },
+    "lenal01": {
+        "Id": "lenal01",
+        "Name": "Alex Len",
+        "Team": "ATL"
+    },
+    "leonaka01": {
+        "Id": "leonaka01",
+        "Name": "Kawhi Leonard",
+        "Team": "TOR"
+    },
+    "leoname01": {
+        "Id": "leoname01",
+        "Name": "Meyers Leonard",
+        "Team": "POR"
+    },
+    "leuerjo01": {
+        "Id": "leuerjo01",
+        "Name": "Jon Leuer",
+        "Team": "DET"
+    },
+    "leverca01": {
+        "Id": "leverca01",
+        "Name": "Caris LeVert",
+        "Team": "BRK"
+    },
+    "liggide01": {
+        "Id": "liggide01",
+        "Name": "DeAndre Liggins"
+    },
+    "lillada01": {
+        "Id": "lillada01",
+        "Name": "Damian Lillard",
+        "Team": "POR"
+    },
+    "linje01": {
+        "Id": "linje01",
+        "Name": "Jeremy Lin",
+        "Team": "ATL"
+    },
+    "livinsh01": {
+        "Id": "livinsh01",
+        "Name": "Shaun Livingston",
+        "Team": "GSW"
+    },
+    "loftoza01": {
+        "Id": "loftoza01",
+        "Name": "Zach Lofton",
+        "Team": "DET"
+    },
+    "longsh01": {
+        "Id": "longsh01",
+        "Name": "Shawn Long"
+    },
+    "looneke01": {
+        "Id": "looneke01",
+        "Name": "Kevon Looney",
+        "Team": "GSW"
+    },
+    "lopezbr01": {
+        "Id": "lopezbr01",
+        "Name": "Brook Lopez",
+        "Team": "MIL"
+    },
+    "lopezro01": {
+        "Id": "lopezro01",
+        "Name": "Robin Lopez",
+        "Team": "CHI"
+    },
+    "loveke01": {
+        "Id": "loveke01",
+        "Name": "Kevin Love",
+        "Team": "CLE"
+    },
+    "lowryky01": {
+        "Id": "lowryky01",
+        "Name": "Kyle Lowry",
+        "Team": "TOR"
+    },
+    "loydjo01": {
+        "Id": "loydjo01",
+        "Name": "Jordan Loyd",
+        "Team": "TOR"
+    },
+    "lucaska01": {
+        "Id": "lucaska01",
+        "Name": "Kalin Lucas"
+    },
+    "luwawti01": {
+        "Id": "luwawti01",
+        "Name": "Timothe Luwawu-Cabarrot",
+        "Team": "OKC"
+    },
+    "lydonty01": {
+        "Id": "lydonty01",
+        "Name": "Tyler Lydon",
+        "Team": "DEN"
+    },
+    "lylestr01": {
+        "Id": "lylestr01",
+        "Name": "Trey Lyles",
+        "Team": "DEN"
+    },
+    "mcclesh01": {
+        "Id": "mcclesh01",
+        "Name": "Sheldon Mac"
+    },
+    "macksh01": {
+        "Id": "macksh01",
+        "Name": "Shelvin Mack",
+        "Team": "MEM"
+    },
+    "maconda01": {
+        "Id": "maconda01",
+        "Name": "Daryl Macon",
+        "Team": "DAL"
+    },
+    "magetjo01": {
+        "Id": "magetjo01",
+        "Name": "Josh Magette"
+    },
+    "mahinia01": {
+        "Id": "mahinia01",
+        "Name": "Ian Mahinmi",
+        "Team": "WAS"
+    },
+    "makerth01": {
+        "Id": "makerth01",
+        "Name": "Thon Maker",
+        "Team": "MIL"
+    },
+    "marjabo01": {
+        "Id": "marjabo01",
+        "Name": "Boban Marjanovic",
+        "Team": "LAC"
+    },
+    "markkla01": {
+        "Id": "markkla01",
+        "Name": "Lauri Markkanen",
+        "Team": "CHI"
+    },
+    "marshke01": {
+        "Id": "marshke01",
+        "Name": "Kendall Marshall"
+    },
+    "martija01": {
+        "Id": "martija01",
+        "Name": "Jarell Martin",
+        "Team": "ORL"
+    },
+    "masonfr01": {
+        "Id": "masonfr01",
+        "Name": "Frank Mason III",
+        "Team": "SAC"
+    },
+    "mathima01": {
+        "Id": "mathima01",
+        "Name": "Mangok Mathiang"
+    },
+    "matthwe02": {
+        "Id": "matthwe02",
+        "Name": "Wesley Matthews",
+        "Team": "DAL"
+    },
+    "mayooj01": {
+        "Id": "mayooj01",
+        "Name": "O.J. Mayo"
+    },
+    "mbahalu01": {
+        "Id": "mbahalu01",
+        "Name": "Luc Mbah a Moute",
+        "Team": "LAC"
+    },
+    "mcadoja01": {
+        "Id": "mcadoja01",
+        "Name": "James Michael McAdoo"
+    },
+    "mccawpa01": {
+        "Id": "mccawpa01",
+        "Name": "Patrick McCaw"
+    },
+    "mccolcj01": {
+        "Id": "mccolcj01",
+        "Name": "CJ McCollum",
+        "Team": "POR"
+    },
+    "mccontj01": {
+        "Id": "mccontj01",
+        "Name": "T.J. McConnell",
+        "Team": "PHI"
+    },
+    "mccreer01": {
+        "Id": "mccreer01",
+        "Name": "Erik McCree"
+    },
+    "mcculch01": {
+        "Id": "mcculch01",
+        "Name": "Chris McCullough"
+    },
+    "mcdankj01": {
+        "Id": "mcdankj01",
+        "Name": "K.J. McDaniels"
+    },
+    "mcderdo01": {
+        "Id": "mcderdo01",
+        "Name": "Doug McDermott",
+        "Team": "IND"
+    },
+    "mcgeeja01": {
+        "Id": "mcgeeja01",
+        "Name": "JaVale McGee",
+        "Team": "LAL"
+    },
+    "mcgruro01": {
+        "Id": "mcgruro01",
+        "Name": "Rodney McGruder",
+        "Team": "MIA"
+    },
+    "mckintr01": {
+        "Id": "mckintr01",
+        "Name": "Trey McKinney-Jones"
+    },
+    "mckinal01": {
+        "Id": "mckinal01",
+        "Name": "Alfonzo McKinnie",
+        "Team": "GSW"
+    },
+    "mclembe01": {
+        "Id": "mclembe01",
+        "Name": "Ben McLemore",
+        "Team": "SAC"
+    },
+    "mcraejo01": {
+        "Id": "mcraejo01",
+        "Name": "Jordan McRae",
+        "Team": "WAS"
+    },
+    "mcrobjo01": {
+        "Id": "mcrobjo01",
+        "Name": "Josh McRoberts"
+    },
+    "meeksjo01": {
+        "Id": "meeksjo01",
+        "Name": "Jodie Meeks"
+    },
+    "mejrisa01": {
+        "Id": "mejrisa01",
+        "Name": "Salah Mejri",
+        "Team": "DAL"
+    },
+    "meltode01": {
+        "Id": "meltode01",
+        "Name": "De'Anthony Melton",
+        "Team": "PHO"
+    },
+    "metuch01": {
+        "Id": "metuch01",
+        "Name": "Chimezie Metu",
+        "Team": "SAS"
+    },
+    "mickejo01": {
+        "Id": "mickejo01",
+        "Name": "Jordan Mickey"
+    },
+    "middlkh01": {
+        "Id": "middlkh01",
+        "Name": "Khris Middleton",
+        "Team": "MIL"
+    },
+    "milescj01": {
+        "Id": "milescj01",
+        "Name": "C.J. Miles",
+        "Team": "TOR"
+    },
+    "milleda01": {
+        "Id": "milleda01",
+        "Name": "Darius Miller",
+        "Team": "NOP"
+    },
+    "millema01": {
+        "Id": "millema01",
+        "Name": "Malcolm Miller"
+    },
+    "millspa02": {
+        "Id": "millspa02",
+        "Name": "Patty Mills",
+        "Team": "SAS"
+    },
+    "millsel01": {
+        "Id": "millsel01",
+        "Name": "Elijah Millsap"
+    },
+    "millspa01": {
+        "Id": "millspa01",
+        "Name": "Paul Millsap",
+        "Team": "DEN"
+    },
+    "miltosh01": {
+        "Id": "miltosh01",
+        "Name": "Shake Milton",
+        "Team": "PHI"
+    },
+    "mirotni01": {
+        "Id": "mirotni01",
+        "Name": "Nikola Mirotic",
+        "Team": "NOP"
+    },
+    "mitchdo01": {
+        "Id": "mitchdo01",
+        "Name": "Donovan Mitchell",
+        "Team": "UTA"
+    },
+    "mitchto03": {
+        "Id": "mitchto03",
+        "Name": "Tony Mitchell"
+    },
+    "mitchto02": {
+        "Id": "mitchto02",
+        "Name": "Tony Mitchell"
+    },
+    "mitrona01": {
+        "Id": "mitrona01",
+        "Name": "Naz Mitrou-Long",
+        "Team": "UTA"
+    },
+    "monkma01": {
+        "Id": "monkma01",
+        "Name": "Malik Monk",
+        "Team": "CHO"
+    },
+    "monrogr01": {
+        "Id": "monrogr01",
+        "Name": "Greg Monroe",
+        "Team": "TOR"
+    },
+    "montelu01": {
+        "Id": "montelu01",
+        "Name": "Luis Montero"
+    },
+    "moorebe01": {
+        "Id": "moorebe01",
+        "Name": "Ben Moore",
+        "Team": "SAS"
+    },
+    "mooreet01": {
+        "Id": "mooreet01",
+        "Name": "E'Twaun Moore",
+        "Team": "NOP"
+    },
+    "moreler01": {
+        "Id": "moreler01",
+        "Name": "Eric Moreland",
+        "Team": "PHO"
+    },
+    "morrija01": {
+        "Id": "morrija01",
+        "Name": "Jaylen Morris",
+        "Team": "MIL"
+    },
+    "morrima03": {
+        "Id": "morrima03",
+        "Name": "Marcus Morris",
+        "Team": "BOS"
+    },
+    "morrima02": {
+        "Id": "morrima02",
+        "Name": "Markieff Morris",
+        "Team": "WAS"
+    },
+    "morrimo01": {
+        "Id": "morrimo01",
+        "Name": "Monte Morris",
+        "Team": "DEN"
+    },
+    "morroan01": {
+        "Id": "morroan01",
+        "Name": "Anthony Morrow"
+    },
+    "motiedo01": {
+        "Id": "motiedo01",
+        "Name": "Donatas Motiejunas"
+    },
+    "motlejo01": {
+        "Id": "motlejo01",
+        "Name": "Johnathan Motley",
+        "Team": "LAC"
+    },
+    "mozgoti01": {
+        "Id": "mozgoti01",
+        "Name": "Timofey Mozgov",
+        "Team": "ORL"
+    },
+    "mudiaem01": {
+        "Id": "mudiaem01",
+        "Name": "Emmanuel Mudiay",
+        "Team": "NYK"
+    },
+    "muhamsh01": {
+        "Id": "muhamsh01",
+        "Name": "Shabazz Muhammad"
+    },
+    "munfoxa02": {
+        "Id": "munfoxa02",
+        "Name": "Xavier Munford"
+    },
+    "murrade01": {
+        "Id": "murrade01",
+        "Name": "Dejounte Murray",
+        "Team": "SAS"
+    },
+    "murraja01": {
+        "Id": "murraja01",
+        "Name": "Jamal Murray",
+        "Team": "DEN"
+    },
+    "musadz01": {
+        "Id": "musadz01",
+        "Name": "Dzanan Musa",
+        "Team": "BRK"
+    },
+    "muscami01": {
+        "Id": "muscami01",
+        "Name": "Mike Muscala",
+        "Team": "PHI"
+    },
+    "mykhasv01": {
+        "Id": "mykhasv01",
+        "Name": "Svi  Mykhailiuk",
+        "Team": "LAL"
+    },
+    "naderab01": {
+        "Id": "naderab01",
+        "Name": "Abdel Nader",
+        "Team": "OKC"
+    },
+    "nancela02": {
+        "Id": "nancela02",
+        "Name": "Larry Nance Jr.",
+        "Team": "CLE"
+    },
+    "napiesh01": {
+        "Id": "napiesh01",
+        "Name": "Shabazz Napier",
+        "Team": "BRK"
+    },
+    "ndourma01": {
+        "Id": "ndourma01",
+        "Name": "Maurice Ndour"
+    },
+    "nelsoja01": {
+        "Id": "nelsoja01",
+        "Name": "Jameer Nelson"
+    },
+    "netora01": {
+        "Id": "netora01",
+        "Name": "Raul Neto",
+        "Team": "UTA"
+    },
+    "niangge01": {
+        "Id": "niangge01",
+        "Name": "Georges Niang",
+        "Team": "UTA"
+    },
+    "nichoan01": {
+        "Id": "nichoan01",
+        "Name": "Andrew Nicholson"
+    },
+    "noahjo01": {
+        "Id": "noahjo01",
+        "Name": "Joakim Noah",
+        "Team": "MEM"
+    },
+    "noelne01": {
+        "Id": "noelne01",
+        "Name": "Nerlens Noel",
+        "Team": "OKC"
     }
 }

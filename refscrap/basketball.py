@@ -85,7 +85,7 @@ class BasketballReferenceScraper:
         player_dict[player_id] = {'Id': player_id}
         resp = self.query(url, timeout=5)
         if resp.status_code != 200:
-            return
+            return False
         
         content = BeautifulSoup(resp.content, 'html.parser')
         name = content.find('h1', {'itemprop': 'name'}).string
@@ -108,8 +108,14 @@ class BasketballReferenceScraper:
         with open('player_dict.json', 'w') as outfile:
             outfile.write(json.dumps(player_dict, indent=4))
 
+        return idx is not None
+
     def scrape_player(self, url):
-        self.generate_player_dict_entry(url)
+        res = self.generate_player_dict_entry(url)
+        # avoid inactive players
+        if res is False:
+            return
+
         base_url = url[:-5]
         self.download_game_logs(base_url, 2017, 2019)
         self.download_advanced_game_logs(base_url, 2017, 2019)
@@ -146,13 +152,19 @@ class BasketballReferenceScraper:
                 continue
 
             if len(csv_headings) == 0:
-                thead = div.find('thead')
-                ths = thead.findChildren('th')
-                for th in ths:
-                    if th['data-stat'] in \
-                            BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
-                        continue
-                    csv_headings.append(th.string)
+                for i in range(10):
+                    thead = div.find('thead')
+                    ths = thead.findChildren('th')
+                    for th in ths:
+                        if th['data-stat'] in \
+                                BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
+                            continue
+                        csv_headings.append(th.string)
+                    if len(csv_headings) == 21:
+                        break
+                if len(csv_headings) != 21:
+                    raise RuntimeError('Cannot get 21 columns for ' +
+                                       base_url + '/gamelog-advanced/' + year)
 
             trs = div.findChildren('tr')[1:]
             for tr in trs:
@@ -205,13 +217,19 @@ class BasketballReferenceScraper:
                 continue
 
             if len(csv_headings) == 0:
-                thead = div.find('thead')
-                ths = thead.findChildren('th')
-                for th in ths:
-                    if th['data-stat'] in \
-                            BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
-                        continue
-                    csv_headings.append(th.string)
+                for i in range(10):
+                    thead = div.find('thead')
+                    ths = thead.findChildren('th')
+                    for th in ths:
+                        if th['data-stat'] in \
+                                BasketballReferenceScraper.DATA_STAT_TO_IGNORE:
+                            continue
+                        csv_headings.append(th.string)
+                    if len(csv_headings) == 28:
+                        break
+                if len(csv_headings) != 28:
+                    raise RuntimeError('Cannot get 28 columns for ' +
+                                       base_url + '/gamelog/' + year)
 
             trs = div.findChildren('tr')[1:]
             for tr in trs:
