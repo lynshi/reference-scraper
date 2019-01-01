@@ -83,12 +83,12 @@ class BasketballReferenceScraper:
 
         player_id = url.split('/')[-1].split('.')[0]
         if player_id in player_dict:
-            return True
-        
+            return
+
         player_dict[player_id] = {'Id': player_id}
         resp = self.query(url, timeout=5)
         if resp.status_code != 200:
-            return False
+            return
         
         content = BeautifulSoup(resp.content, 'html.parser')
         name = content.find('h1', {'itemprop': 'name'}).string
@@ -111,14 +111,8 @@ class BasketballReferenceScraper:
         with open('player_dict.json', 'w') as outfile:
             outfile.write(json.dumps(player_dict, indent=4))
 
-        return idx is not None
-
     def scrape_player(self, url):
-        res = self.generate_player_dict_entry(url)
-        # avoid inactive players
-        if res is False:
-            return
-
+        self.generate_player_dict_entry(url)
         base_url = url[:-5]
         self.download_game_logs(base_url, 2017, 2019)
         self.download_advanced_game_logs(base_url, 2017, 2019)
