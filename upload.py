@@ -4,7 +4,7 @@ from refscrap.uploader import Uploader
 
 
 def upload():
-    uploader = Uploader('player_dict_cp.json')
+    uploader = Uploader('player_dict.json')
     wd = os.getcwd() + '/'
     data_dir = wd + 'data/basketball/'
 
