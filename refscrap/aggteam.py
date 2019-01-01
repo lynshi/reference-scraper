@@ -8,7 +8,7 @@ from refscrap.uploader import Uploader
 def create_aggregated_data_frame(directory):
     df = None
     for f in os.listdir(directory):
-        if f.find('.csv') == -1 or f.find('advanced') != -1:
+        if f.find('.csv') == -1 or f.find('advanced') == -1:
             continue
         file = directory + f
         if df is None:
@@ -18,6 +18,9 @@ def create_aggregated_data_frame(directory):
                 df = df.append(pd.read_csv(file))
             except pd.errors.EmptyDataError:
                 print('empty file: ' + file)
+                exit()
+            except pd.errors.ParserError:
+                print('missing columns: ' + file)
                 exit()
 
     def get_season(row):
