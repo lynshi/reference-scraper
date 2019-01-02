@@ -7,7 +7,7 @@ import json
 class Uploader:
     def __init__(self, player_dict_json):
         self.client = datastore.Client.from_service_account_json(
-            '../.api_credentials/gcloud_datastore.json')
+            '../.api_credentials/gcloud-datastore.json')
         with open(player_dict_json) as infile:
             self.player_dict = json.load(infile)
 
