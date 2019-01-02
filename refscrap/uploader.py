@@ -53,7 +53,7 @@ class Uploader:
 
         return team_entity.key
 
-    def add_team_game_logs(self, team, team_key, logs):
+    def add_team_game_logs(self, team_key, logs):
         items = []
         for tup in logs.keys():
             season = str(tup[0])

@@ -66,4 +66,4 @@ def get_game_logs_for_team(df: pd.DataFrame, team, uploader: Uploader, team_key)
             log['Tm'] = team
             logs[(season, game)] = log
 
-    uploader.add_team_game_logs(team, team_key, logs)
+    uploader.add_team_game_logs(team_key, logs)
