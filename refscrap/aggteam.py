@@ -62,6 +62,8 @@ def get_game_logs_for_team(df: pd.DataFrame, team, uploader: Uploader, team_key)
             for stat in stats:
                 log[stat] = int(game_df[stat].sum())
             log['Opp'] = game_df['Opp'].unique()[0]
+            log['Rk'] = game
+            log['Tm'] = team
             logs[(season, game)] = log
 
     uploader.add_team_game_logs(team, team_key, logs)

@@ -59,7 +59,6 @@ class Uploader:
             season = str(tup[0])
             game = tup[1]
             stats = logs[tup]
-            stats['Tm'] = team
             key = self.client.key(season, game, parent=team_key)
             item = datastore.Entity(key, exclude_from_indexes=(
                 'FG', 'FGA', '3P', '3PA',
