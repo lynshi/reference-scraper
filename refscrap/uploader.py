@@ -116,7 +116,7 @@ class Uploader:
                 except KeyError:
                     raise RuntimeError(str(tup) + ' missing in ' +
                                        csv_file_name)
-        return
+
         items = []
         for tup in game_logs.keys():
             season = tup[0]
