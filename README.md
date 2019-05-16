@@ -1,6 +1,6 @@
 # reference-scraper
 
-Code to scrape *-reference.com for seasonal athlete statistics, which are then aggregated to form seasonal team statistics. Currently, there is only code for basketball-reference.com.
+Code to scrape *-reference.com for seasonal athlete statistics, which are then aggregated to form seasonal team statistics. Currently, there is only code for [basketball-reference.com](https://www.basketball-reference.com/).
 
 To prevent TOS violations from scraping, there is a 10 second<sup>1, 2</sup> interval between requests, and 5 minute breaks<sup>1</sup> every 15 minutes<sup>1</sup>.
 
