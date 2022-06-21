@@ -9,7 +9,7 @@ google-cloud-datastore==1.7.3
 googleapis-common-protos==1.5.5
 grpcio==1.17.1
 idna==2.8
-numpy==1.15.4
+numpy==1.22.0
 pandas==0.23.4
 protobuf==3.6.1
 pyasn1==0.4.5
